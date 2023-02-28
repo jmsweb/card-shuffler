@@ -17,6 +17,12 @@ The code is developed with Javax Swing components as a standalone application. T
 
 Refer to the two screenshots to illustrate the states:
 
-| Initial | Shuffled |
-|---|
-| <img src="screenshot/InitialState.png" width="300" /> | <img src="screenshot/ShuffledState.png" width="300" /> |
+Initial
+
+<img src="screenshot/InitialState.png" width="300" />
+
+Shuffled
+
+<img src="screenshot/ShuffledState.png" width="300" />
+
+
