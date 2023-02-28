@@ -2,7 +2,7 @@
 
 ## Requirement
 
-Java 9+ for running jar as application
+Java 18+ for running jar as application
 Maven for building application into a jar
 
 ## Installation
