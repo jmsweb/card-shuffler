@@ -8,7 +8,7 @@ Maven for building application into a jar
 ## Installation
 
 1. Clone the repository to a local machine
-2. Navigate to procare-code-demo
+2. Navigate to card-shuffler
 3. Run command 'mvn clean install' in a terminal
 4. Run command 'java -jar card-deck/target/card-deck.jar'
 
