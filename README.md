@@ -2,8 +2,8 @@
 
 ## Requirement
 
-Java 18+ for running jar as application
-Maven for building application into a jar
+- Java 18+ for running jar as application
+- Maven for building application into a jar
 
 ## Installation
 
