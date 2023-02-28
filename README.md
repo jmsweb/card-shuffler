@@ -1,4 +1,4 @@
-# Jason's Card Shuffler
+# Jason's Unicode Card Shuffler
 
 ## Requirement
 
