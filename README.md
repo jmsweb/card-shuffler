@@ -1,4 +1,6 @@
 # Jason's Unicode Card Shuffler
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/jmsweb/card-shuffler/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/jmsweb/card-shuffler/tree/master)
+
 
 ## Requirement
 
