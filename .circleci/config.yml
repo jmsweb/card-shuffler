@@ -37,4 +37,3 @@
            type: approval
            requires:
              - java-maven-test
-       - java-maven-test
