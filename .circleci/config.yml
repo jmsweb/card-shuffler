@@ -35,6 +35,6 @@
      jobs:
        - java-maven-test:
            requires:
-             - request-for-testt
+             - request-for-test
        - request-for-test:
            type: approval
