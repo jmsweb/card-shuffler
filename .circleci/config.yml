@@ -34,4 +34,9 @@
      # Inside the workflow, you define the jobs you want to run.
      jobs:
        - java-maven-test:
+           requires:
+             - approval-request
+       - approval-request:
            type: approval
+           requires:
+             - java-maven-test
