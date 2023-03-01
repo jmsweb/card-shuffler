@@ -35,5 +35,3 @@
      jobs:
        - run-build-and-test:
            type: approval
-           requires:
-             - java-maven-test
