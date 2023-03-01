@@ -38,5 +38,3 @@
              - approval-request
        - approval-request:
            type: approval
-           requires:
-             - java-maven-test
