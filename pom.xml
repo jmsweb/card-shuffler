@@ -7,6 +7,7 @@
         <java-version>18</java-version>
         <maven-compiler-version>3.10.1</maven-compiler-version>
         <maven-jar-version>3.3.0</maven-jar-version>
+        <java-unit-version>4.13.2</java-unit-version>
     </properties>
 
     <groupId>com.jms</groupId>
@@ -25,11 +26,20 @@
         <module>card-deck</module>
     </modules>
 
+    <dependencyManagement>
+      <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${java-unit-version}</version>
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+
     <build>
         <!-- Plugin management -->
         <pluginManagement>
             <plugins>
-                <!-- compiler plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
