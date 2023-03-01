@@ -36,6 +36,3 @@
        - java-maven-test
        - hold:
            type: approval
-       - deploy:
-          requires:
-            - hold
