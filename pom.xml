@@ -4,10 +4,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>18</java-version>
+        <java-version>19</java-version>
         <maven-compiler-version>3.10.1</maven-compiler-version>
         <maven-jar-version>3.3.0</maven-jar-version>
-        <java-unit-version>4.13.2</java-unit-version>
+        <maven-surefire-version>3.0.0-M9</maven-surefire-version>
+        <java-unit-version>5.9.2</java-unit-version>
+        <junit-suite-version>1.9.2</junit-suite-version>
     </properties>
 
     <groupId>com.jms</groupId>
@@ -29,17 +31,40 @@
     <dependencyManagement>
       <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
             <version>${java-unit-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-engine</artifactId>
+            <version>${junit-suite-version}</version>
+            <scope>test</scope>
         </dependency>
       </dependencies>
     </dependencyManagement>
 
     <build>
-        <!-- Plugin management -->
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-version}</version>
+                    <configuration>
+                        <includes>
+                            <include>com.jms.suite.TestSuite.java</include>
+                        </includes>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.junit.jupiter</groupId>
+                            <artifactId>junit-jupiter-engine</artifactId>
+                            <version>${java-unit-version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
