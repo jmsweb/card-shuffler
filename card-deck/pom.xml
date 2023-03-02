@@ -38,6 +38,13 @@
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.jms.ui.CardShuffler</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
