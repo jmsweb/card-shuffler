@@ -10,6 +10,7 @@
         <maven-surefire-version>3.0.0-M9</maven-surefire-version>
         <java-unit-version>5.9.2</java-unit-version>
         <junit-suite-version>1.9.2</junit-suite-version>
+        <java-exec-version>3.1.0</java-exec-version>
     </properties>
 
     <groupId>com.jms</groupId>
@@ -79,6 +80,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${maven-jar-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${java-exec-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
