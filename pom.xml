@@ -57,7 +57,7 @@
                     <version>3.10.1</version>
                 </plugin>
 
-                <!-- Usage: mvn package, mvn clean package, mvn clean compile package -->
+                <!-- Usage: mvn clean compile package -->
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.3.0</version>
@@ -72,7 +72,7 @@
                     </configuration>
                 </plugin>
 
-                <!-- Usage: mvn -pl card-deck exec:java -->
+                <!-- Usage: mvn -pl card-deck clean compile exec:java -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
