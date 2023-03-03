@@ -3,9 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>19</java.version>
         <maven.compiler.release>8</maven.compiler.release>
+        <maven.compiler.source>${maven.compiler.release}</maven.compiler.source>
+        <maven.compiler.target>${maven.compiler.release}</maven.compiler.target>
+        <maven.test.skip>true</maven.test.skip>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <groupId>com.jms</groupId>
@@ -15,7 +18,7 @@
     <name>A parent project (POM)</name>
     <developers>
         <developer>
-            <name>Jason Schwebke</name>
+            <name>jmsweb</name>
             <email>no-reply@gmail.com</email>
         </developer>
     </developers>
@@ -25,27 +28,22 @@
     </modules>
 
     <dependencyManagement>
-      <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-suite-engine</artifactId>
-            <version>1.9.2</version>
-            <scope>test</scope>
-        </dependency>
-      </dependencies>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.9.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
         <pluginManagement>
             <plugins>
+                <!-- Usage: mvn test -Dmaven.test.skip=false -->
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M9</version>
                     <configuration>
@@ -53,34 +51,38 @@
                             <include>com.jms.suite.TestSuite.java</include>
                         </includes>
                     </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.junit.jupiter</groupId>
-                            <artifactId>junit-jupiter-engine</artifactId>
-                            <version>5.9.2</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.10.1</version>
-                    <configuration>
-                        <source>${maven.compiler.release}</source>
-                        <target>${maven.compiler.release}</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
                 </plugin>
+
+                <!-- Usage: mvn package, mvn clean package, mvn clean compile package -->
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.3.0</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <classpathPrefix>lib/</classpathPrefix>
+                                <mainClass>com.jms.ui.CardShuffler</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
                 </plugin>
+
+                <!-- Usage: mvn -pl card-deck exec:java -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>3.1.0</version>
+                    <configuration>
+                        <mainClass>com.jms.ui.CardShuffler</mainClass>
+                    </configuration>
                 </plugin>
+
+                <!-- Usage: java -jar card-deck/target/card-deck.jar -->
             </plugins>
         </pluginManagement>
     </build>
