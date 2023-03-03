@@ -35,6 +35,14 @@ A few things about the application:
 
 Refer to the two screenshots to illustrate the states:
 
+## Build to Distribute (Without Signed Certificates)
+Change into card-shuffler directory
+
+Compile and Run - `mvn -pl card-deck clean compile exec:java`
+Generate App Image - `jpackage --type app-image --main-jar card-deck-1.0.0-SNAPSHOT.jar --input card-deck/target --dest card-deck/build`
+Generate MacOS Package (pkg) - `jpackage --type pkg --main-jar card-deck-1.0.0-SNAPSHOT.jar --input card-deck/target --dest card-deck/build`
+Generate MacOS Installer (dmg) - `jpackage --type dmg --main-jar card-deck-1.0.0-SNAPSHOT.jar --input card-deck/target --dest card-deck/build`
+
 Initial
 
 <img src="screenshot/InitialState.png" width="300" />
