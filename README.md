@@ -4,19 +4,34 @@
 
 ## Requirement
 
-- OpenJDK 19.0+ java development
-- Maven 3+ for building JAR and running Java application
+- OpenJDK 19.0+ for development
+- Maven 3+ for building
+- JRE 8+ for running
 
 ## Installation
 
-1. Clone the repository to a local machine
-2. Navigate to card-shuffler
-3. Run command `mvn clean package` in a terminal
-4. Run command `java -jar card-deck/target/card-deck.jar`, or
-  1. Run command `mvn clean compile -pl card-deck exec:java`
+1. Copy the repository to a local drive `git clone git@github.com:jmsweb/card-shuffler.git`
+2. Change into card-shuffler folder `cd card-shuffler`
+  1. `mvn clean package` to build JAR
+  2. `mvn clean compile -pl card-deck exec:java` to run JAR application
+  3. `java -jar card-deck/target/card-deck.jar` on operating system
 
 ## Explanation
-The code is developed with Javax Swing components as a standalone application. There are three ways to execute the application; double-click on card-deck.jar, run `java -jar card-deck.jar` command, or run `mvn -pl card-deck compile exec:java` command. By doing so, the operating system should detect the JVM to load the graphical user interface on a computer screen. The application cannot be resized, and the exit button would exit the application. This is essentially a basic application with two buttons one to reset the card deck and the other to shuffle the deck. This application cannot be resized and the exit button on the top corner would exit the application.
+This code uses Javax Swing components for a GUI application.
+
+There are three ways to execute the application;
+
+- double-click on `card-deck-1.0.0-SNAPSHOT.jar`
+- `java -jar card-deck/target/card-deck.jar` (Use this command on different computer)
+- `mvn -pl card-deck exec:java` (Use this command to run application before building a jar)
+
+The operating system should have the minimum version of Java Runtime Environment installed.
+
+A few things about the application:
+- The application cannot be resized.
+- The exit button closes the application.
+- The reset button would resets the card deck.
+- The shuffle button would randomly shuffle the deck.
 
 Refer to the two screenshots to illustrate the states:
 
