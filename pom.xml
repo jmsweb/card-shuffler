@@ -4,13 +4,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>19</java-version>
-        <maven-compiler-version>3.10.1</maven-compiler-version>
-        <maven-jar-version>3.3.0</maven-jar-version>
-        <maven-surefire-version>3.0.0-M9</maven-surefire-version>
-        <java-unit-version>5.9.2</java-unit-version>
-        <junit-suite-version>1.9.2</junit-suite-version>
-        <java-exec-version>3.1.0</java-exec-version>
+        <java.version>19</java.version>
+        <maven.compiler.release>8</maven.compiler.release>
     </properties>
 
     <groupId>com.jms</groupId>
@@ -34,13 +29,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>${java-unit-version}</version>
+            <version>5.9.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite-engine</artifactId>
-            <version>${junit-suite-version}</version>
+            <version>1.9.2</version>
             <scope>test</scope>
         </dependency>
       </dependencies>
@@ -52,7 +47,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven-surefire-version}</version>
+                    <version>3.0.0-M9</version>
                     <configuration>
                         <includes>
                             <include>com.jms.suite.TestSuite.java</include>
@@ -62,29 +57,29 @@
                         <dependency>
                             <groupId>org.junit.jupiter</groupId>
                             <artifactId>junit-jupiter-engine</artifactId>
-                            <version>${java-unit-version}</version>
+                            <version>5.9.2</version>
                         </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-version}</version>
+                    <version>3.10.1</version>
                     <configuration>
-                        <source>${java-version}</source>
-                        <target>${java-version}</target>
+                        <source>${maven.compiler.release}</source>
+                        <target>${maven.compiler.release}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>${maven-jar-version}</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>${java-exec-version}</version>
+                    <version>3.1.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
