@@ -10,6 +10,7 @@
     <artifactId>card-deck</artifactId>
     <packaging>jar</packaging>
     <name>A module project (JAR)</name>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -22,29 +23,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>card-deck</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.jms.ui.CardShuffler</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.jms.ui.CardShuffler</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
